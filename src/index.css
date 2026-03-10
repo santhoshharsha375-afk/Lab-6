@@ -1,0 +1,150 @@
+/* Global Luxury Theme */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #000000);
+  color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Elegant heading */
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #d4af37, #f5d77a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Premium grid layout */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+/* Luxury glass card */
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Golden glow hover effect */
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(212,175,55,0.25), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
+}
+
+/* Product image styling */
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* Elegant typography */
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+/* Skeleton Luxury Shimmer */
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-img,
+.skeleton-text {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.skeleton-img {
+  height: 160px;
+}
+
+.skeleton-text {
+  height: 18px;
+  margin-top: 12px;
+}
+
+/* Shimmer animation */
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 150%;
+  }
+}
+.luxury-btn {
+  background: linear-gradient(90deg, #d4af37, #f5d77a);
+  color: black;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.luxury-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.4);
+}
